@@ -24,13 +24,24 @@ class TextField extends StatefulWidget {
   const TextField({Key? key}) : super(key: key);
 
   @override
-  _TextFiledState createState() => _TextFiledState();
+  _TextFieldState createState() => _TextFieldState();
 }
-class _TextFiledState extends State<TextField> {
+class _TextFieldState extends State<TextField> {
+  final String _expression = '1+1';
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Expanded(
+      flex: 1,
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Text(
+          _expression,
+          style: const TextStyle(
+            fontSize: 64.0,
+          ),
+        ),
+      )
     );
   }
 }
