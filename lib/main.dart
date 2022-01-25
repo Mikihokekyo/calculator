@@ -52,19 +52,48 @@ class Keyboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Expanded(
+      flex: 2,
+      child: Center(
+        child: Container(
+          color: const Color(0xff87cefa),
+          child: GridView.count(
+              crossAxisCount: 4,
+          mainAxisSpacing: 3.0,
+          crossAxisSpacing: 3.0,
+          children: [
+                '7', '8', '9', '÷',
+                '4', '5', '6', '×',
+                '1', '2', '3', '-',
+                'C', '0', '=', '+',
+          ].map((key) {
+            return GridTile(
+              child: Button(key),
+                  );
+              } ).toList(),
+            ),
+        )
+      )
       // any code
     );
   }
 }
+
 //　キーボタン
 class Button extends StatelessWidget {
-  const Button({Key? key}) : super(key: key);
+    final _key;
+    const Button(this._key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // any code
+    return FlatButton(
+      onPressed: () {  },
+      child: Center(
+        child: Text(
+           _key,
+           style: const TextStyle(fontSize: 46.0),
+        ),
+      ),
     );
   }
 }
