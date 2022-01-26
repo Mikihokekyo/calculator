@@ -81,12 +81,13 @@ class Keyboard extends StatelessWidget {
 
 //　キーボタン
 class Button extends StatelessWidget {
-    final _key;
-    const Button(this._key);
+  final String _key;
+  const Button(this._key, {Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return ElevatedButton(
       onPressed: () {  },
       child: Center(
         child: Text(
